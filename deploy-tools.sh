@@ -104,11 +104,8 @@ function set_ssh_key {
   #Remove entry from known_hosts
   ssh-keygen -R $2
 
-  set -x
   # Log in to the machine
   sshpass -p $1 ssh-copy-id -i $SSH_IDENTITY_FILE root@$2
-
-   set +x
 }
 
 #Args $1: number $2: prefix
